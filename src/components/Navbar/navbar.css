@@ -1,46 +1,16 @@
-nav{
-  background-color: #15202b;
+.navbar_{
+    border:2px solid greenyellow;
+    padding: 10px;
+    margin: 10px 0px;
 }
 
-.nav-logo {
-  background-color: white;
-  height: 2.5rem;
-  width: auto;
+.navLinks{
+    font-weight: 700;
+    font-size: 20px;
+    color: green;
 }
 
-.navbar-brand
-{
-  color: white;
-  text-decoration: none;
-  margin-left: 2%;
-  font-size: x-large;
-  font-weight: bolder;
-}
-
-.navbar-brand:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.navbar-toggler{
-  background-color: white;
-  border: 0px;
-}
-
-.nav-item {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-item:hover {
-  text-decoration: none;
-  color: white;
-  transform: scale(1.2);
-}
-
-/* This is not working */
-.nav-item:active {
-  font-weight: bold;
-  color: white;
-  transform: scale(1.1);
+.navHead{
+    font-weight: 700;
+    font-size: 22px;
 }

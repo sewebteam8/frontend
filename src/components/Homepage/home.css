@@ -1,0 +1,66 @@
+
+
+/* ========================structural=============================== */
+.searchbar{
+    display: flex;
+    width: 100%;
+}
+
+.shorts{
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+.shorts-wrapper{
+    padding: 20px;
+    display: flex;
+    overflow-x: scroll;
+    margin: 50px 0px;
+}
+
+.shorts{
+    height: 200px;
+    margin-right: 30px;
+}
+
+.about, .data, .post-list{
+    height: 500px;
+    margin: 50px 0px;
+    box-shadow: 0px 0px 4px 0px black;
+    overflow-y: scroll;
+}
+
+.about-data-list-wrapper{
+    margin: 50px 0px;
+}
+
+/* ===========================detailings================================== */
+.about-head, .data-head, .collab-head{    
+    font-size: 35px;
+    font-weight: 700;
+    color: seagreen;
+    text-align: center;
+    padding: 10px;
+}
+
+.about-desc, .data-desc{
+    padding: 10px;
+}
+
+.articles-list{
+    box-shadow: 0px 0px 4px 0px green;
+    margin: 20px 5px;
+    padding: 5px;
+}
+
+.article-desc{
+    display: flex;
+}
+
+.author{
+    float: right;
+    clear: both;
+}
+
+.tags{
+    clear: both;
+}
