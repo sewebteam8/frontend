@@ -8,19 +8,23 @@ class Navbar extends Component {
             <React.Fragment>
                 <div className="container navbar_">
                     <div className="row">
+                    
                         <div className="col-4 navHead">
                            <Link to = "/" > Collab </Link> 
                         </div>
+
                         <div className="col-2 navLinks">
                            <Link to = "/" > Donate </Link> 
                         </div>
+
                         <div className="col-2 navLinks">
                             <Link to = "/discuss"> Discuss </Link> 
-                            
                         </div>
+
                         <div className="col-2 navLinks">
                              <Link to = "/" > Find Your Buddy </Link>
                         </div>
+
                         <div className="col-2 navLinks">
                            <Link to = "/" > Profile </Link>
                         </div>
