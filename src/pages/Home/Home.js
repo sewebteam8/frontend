@@ -16,8 +16,7 @@ const Home = () => {
     }
 
     return ( 
-        <div className="container"> 
-            {/* <Navbar />   */}
+        <div className="container-fluid home"> 
             <div className="row">
                 <div className="col-12 searchbar form-inline">
                     <input className="form-control" onChange={ handleSearchChange } />

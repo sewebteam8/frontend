@@ -1,4 +1,4 @@
-import Home from './pages/Home/home'
+import Home from './pages/Home/Home'
 import NavBar from './components/Navbar/Navbar';
 import Discuss from './pages/Discussion/Discuss'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
@@ -9,7 +9,7 @@ function App () {
   return (
     <div className="App">
       <Router>
-        <NavBar />
+        <NavBar/>
         <Switch>
           <Route exact path="/">
             <Home />

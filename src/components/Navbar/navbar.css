@@ -1,7 +1,6 @@
 .navbar_{
-    border:2px solid greenyellow;
     padding: 10px;
-    margin: 10px 0px;
+    background-color: #171717;
 }
 
 .navLinks{
