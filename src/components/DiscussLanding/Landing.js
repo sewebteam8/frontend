@@ -7,9 +7,13 @@ const Landing = () => {
                   <h1>
                        Find your buddy and Talk with them
                   </h1>
-                  <button>
-                      join
-                 </button>
+                  <p>
+                      Here you can find your nearby college student and chat with them , resolve quesries regarding studies and make a strong educational environment
+                  </p>
+                  <div class="chat_img d-flex flex-row ">
+                      <img src='./images/chat_img.jpg' />
+                      <button>start</button>
+                  </div>
               </div>
               
               <div className="col-5 p-5 message-box">

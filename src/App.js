@@ -1,4 +1,4 @@
-import Home from './pages/Home/Home'
+import Home from './pages/Home/home'
 import NavBar from './components/Navbar/Navbar';
 import Discuss from './pages/Discussion/Discuss'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';

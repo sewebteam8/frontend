@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './navbar.css';
 
 class Navbar extends Component {
@@ -8,19 +9,20 @@ class Navbar extends Component {
                 <div className="container navbar_">
                     <div className="row">
                         <div className="col-4 navHead">
-                            Collab
+                           <Link to = "/" > Collab </Link> 
                         </div>
                         <div className="col-2 navLinks">
-                            Donate
+                           <Link to = "/" > Donate </Link> 
                         </div>
                         <div className="col-2 navLinks">
-                            Discuss
+                            <Link to = "/discuss"> Discuss </Link> 
+                            
                         </div>
                         <div className="col-2 navLinks">
-                            FindYourBuddy
+                             <Link to = "/" > Find Your Buddy </Link>
                         </div>
                         <div className="col-2 navLinks">
-                            Profile
+                           <Link to = "/" > Profile </Link>
                         </div>
                     </div>
                 </div>       
