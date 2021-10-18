@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './footer.css'
+import bck from '../../Assets/footerB1.png'
 
 const Footer = () => {
     return ( 
