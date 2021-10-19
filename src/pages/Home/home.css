@@ -6,6 +6,7 @@
     width: 50%;
     margin: auto;
     margin-top: 40px;
+    flex-direction: column;
 }
 
 .home{
@@ -31,12 +32,25 @@
 .about, .data, .post-list{
     height: 500px;
     margin: 50px 0px;
-    box-shadow: 0px 0px 4px 0px black;
     overflow-y: scroll;
 }
 
 .about-data-list-wrapper{
-    margin: 50px 0px;
+    margin: 10px 0px;
+}
+
+.search{
+    display: flex;
+}
+
+.home-head{
+    color: honeydew;
+    margin: 40px 0px 120px 0px;
+    font-size: 80px;
+    letter-spacing: 10px;
+    background: -webkit-linear-gradient(right, #bf953f, #fcf6ba, #b38728);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* ===========================detailings================================== */
@@ -52,7 +66,7 @@
 
 .about-desc, .data-desc{
     padding: 10px;
-    background: -webkit-linear-gradient(right, #eee, #aff7a8);
+    background: -webkit-linear-gradient(right, rgb(213, 238, 105), #aff7a8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -61,7 +75,7 @@
     box-shadow: 0px 0px 10px 9px black;
     margin: 20px 5px;
     padding: 5px;
-    background: -webkit-linear-gradient(right, #eee, #aff7a8);
+    background: -webkit-linear-gradient(right, rgb(213, 238, 105), #aff7a8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: left;
@@ -81,4 +95,21 @@
 
 .tags{
     clear: both;
+}
+
+.img-1{
+    width: 90%;
+    height: 90%;
+    opacity: 0.8;
+    margin-top: 40px;
+}
+
+.search-btn{
+    background-color: rgb(75, 219, 75);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-input{
+    background-color: rgb(166, 219, 166);
 }

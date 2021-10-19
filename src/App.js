@@ -4,6 +4,7 @@ import Discuss from './pages/Discussion/Discuss'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
+import Footer from './components/Footer/footer';
 
 function App () {
   return (
@@ -18,6 +19,7 @@ function App () {
             <Discuss />
           </Route>
         </Switch>
+        <Footer/>
       </Router>
     </div>
   );

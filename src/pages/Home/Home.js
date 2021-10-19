@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './home.css'
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/footer';
+import bck1 from '../../Assets/homeB1.png'
+import search_ from '../../Assets/search.png'
+
 
 const Home = () => {
 
@@ -18,9 +19,18 @@ const Home = () => {
     return ( 
         <div className="container-fluid home"> 
             <div className="row">
-                <div className="col-12 searchbar form-inline">
-                    <input className="form-control" onChange={ handleSearchChange } />
-                    <button className="btn btn-success" onClick={ handleSearch } >Search</button>
+                <div className="col-6">
+                    <img src={bck1} className="img-1"/>
+                </div>
+                <div className="col-6 searchbar form-inline">
+                    <div className="home-head">Collab</div>
+                    <div className="search">
+                        <input className="form-control search-input" onChange={ handleSearchChange } />
+                        <span className="search-btn" onClick={ handleSearch } >
+                            <img src={search_} />
+                        </span>
+                    </div>
+                    
                 </div>
             </div>
 
@@ -97,7 +107,6 @@ const Home = () => {
                     </p></div>
                 </div>
             </div>
-            <Footer/>
         </div>
     );
 }
