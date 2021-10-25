@@ -12,3 +12,39 @@
     font-weight: 700;
     font-size: 22px;
 }
+
+.profile_{
+    position: absolute;
+    right: 0px;
+    width: 30%;
+    max-width: 250px;
+    height: 300px;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 2px black;
+    background-color: #171717;
+}
+
+.profile_links{
+    text-align: left;
+    font-size: 20px;
+    padding-left: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .profile_links{
+        font-size: 15px;
+    }
+    .profile_{
+        width: 200px;
+    }
+    .navLinks{
+        font-size: 13px;
+        padding: 0px;
+        margin: 3px 0px;
+    }
+    .navHead{
+        font-size: 17px;
+    }
+}

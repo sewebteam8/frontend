@@ -8,6 +8,7 @@ import './App.css';
 import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
+import Signup from './pages/authenticate/signup';
 
 function App () {
   return (
@@ -23,6 +24,12 @@ function App () {
           </Route>
           <Route exact path="/contact">
             <Contact />
+          </Route>
+          <Route exact path="/authorise">
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
           </Route>
            <Route exact path="/findbuddy">
             <FindBuddy />
