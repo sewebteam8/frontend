@@ -37,7 +37,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(name.length == 0 || email.length == 0 || phone.length == 0 || msg.length == 0 || sub.length == 0)alert("Please fill all details!");
+        if(name.length == 0 || email.length == 0 || phone.length == 0 || msg.length == 0 || sub.length == 0)toast(`Please fill all details!`);
         else{
             const data = {
                 name_ : name,

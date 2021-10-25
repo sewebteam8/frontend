@@ -18,6 +18,16 @@ const Home = () => {
             title : "second chapter in my university",
             author : "Talha",
             tags : "#university, #secondchap"
+        },
+        {
+            title : "third chapter in my university",
+            author : "Talha",
+            tags : "#university, #secondchap"
+        },
+        {
+            title : "fourth chapter in my university",
+            author : "Talha",
+            tags : "#university, #secondchap"
         }
     ]);
     
@@ -78,12 +88,19 @@ const Home = () => {
                 <div className="col-12 col-md-4 data">
                     <p className="data-head">Our Users</p>
                     <p className="data-desc">
-                    ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus enim. Quisque sed lorem malesuada, porttitor ligula in, fringilla lorem. Praesent id urna porta, efficitur ante vitae, dapibus lacus. Curabitur non porttitor metus. Integer eget erat ultrices, placerat risus eu, elementum velit. In effi
+                    <h4>Our data makes our webite more real and legitimate!</h4>
+                        <div className="info-desc">
+                            <p>The web site currently has students from 0 colleges</p>
+                            <p>which account to total 0 students</p>
+                            <p>from 0 states of the union of India</p>
+                        </div>
+                    <em>* Be the next one to join us and make new connections,find new buddy and add alot more to your projects, intern ...</em>
                     </p>
                 </div>
                 <div className="col-12 col-md-4 about">
                     <p className="about-head">About Us</p>
-                    <p className='about-desc'>lorem ipsum In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus enim. Quisque sed lorem malesuada, porttitor ligula in, fringilla lorem. Praesent id urna porta, efficitur ante vitae, dapibus lacus. Curabitur non porttitor metus. Integer eget erat ultrices, placerat risus eu, elementum velit. In efficitur consequat lacinia. Donec metus velit, eleifend quis arcu eu, porttitor suscipit massaconvallis. Phasellus tincidunt justo in quam hendrerit mollis. Curabitur non neque ut purus dapibus sagittis. Curabitur bibendum eros tellus, id facilisis dolor fringilla quis. Quisque molestie tincidunt laoreet. </p>
+                    <p className='about-desc'>Collab - With specific focus on that section which generally from the rural setting. This site is a common integration among students of different institutions which aims to provide unfeigned content.
+                    It is platform where one can share their views, news or anything relatable to college/institute which can be beneficial for others also.It also helps to settle and make connections with the students which can help them in things other than learning like one can find his/her buddy for being roomate/flatmate. </p>
                 </div>
                 <div className="col-12 col-md-4 post-list">
                     <p className="collab-head">On the Top</p>
