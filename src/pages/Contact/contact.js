@@ -37,7 +37,7 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(name.length == 0 || email.length == 0 || phone.length == 0 || msg.length == 0 || sub.length == 0)alert("Please fill all details!");
+        if(name.length == 0 || email.length == 0 || phone.length == 0 || msg.length == 0 || sub.length == 0)toast(`Please fill all details!`);
         else{
             const data = {
                 name_ : name,
@@ -48,7 +48,7 @@ const Contact = () => {
             };
 
             
-            axios.post('https://localhost:7000/services/enqMail' ,data)
+            axios.post('http://localhost:7000/services/enqMail' ,data)
             .then((res) => {
                 toast(`you will be contacted soon`);
                 setName('');
@@ -78,7 +78,7 @@ const Contact = () => {
                         <p className="contactHead">Reach us at : </p>
                         <p>Email : EnquiryCollab@gmail.com</p>
                         <p>Email : or InfoCollab@gmail.com</p>
-                        <p>Phone No: 8400736325 , 8299109673</p>
+                        <p>Phone No: 9999999999, 9999999999</p>
 
                         <div className="col-12 form-input-contact">
                             <img src={FAQ} className="faq_pic"/>

@@ -7,14 +7,51 @@ import search_ from '../../Assets/search.png'
 const Home = () => {
 
     const [search,setSearch] = useState('');
+    const [filter,setFilter] = useState([]);
+    const [result,setResult] = useState([
+        {
+            title : "first chapter in my college",
+            author : "Talha",
+            tags : "#college, #firstchap"
+        },
+        {
+            title : "second chapter in my university",
+            author : "Talha",
+            tags : "#university, #secondchap"
+        },
+        {
+            title : "third chapter in my university",
+            author : "Talha",
+            tags : "#university, #secondchap"
+        },
+        {
+            title : "fourth chapter in my university",
+            author : "Talha",
+            tags : "#university, #secondchap"
+        }
+    ]);
+    
 
-    const  handleSearch = () => {
-
+    const  handleSearch = (e) => {
+        for(let i = 0; i < result.length; i++){
+            if(result[i].title.includes(search)){
+                setFilter(filter.concat(result[i]));
+            }
+            else if(result[i].author.includes(search)){
+                setFilter(filter.concat(result[i]));
+            }
+            else if(result[i].tags.includes(search)){
+                setFilter(filter.concat(result[i]));
+            }
+        }
     }
 
-    const handleSearchChange = () => {
-
-    }
+    const handleSearchChange = (e) => {
+        if(e.currentTarget.value.length === 0){
+            setFilter([]);
+        }
+        setSearch(e.currentTarget.value)
+    }   
 
     return ( 
         <div className="container-fluid home"> 
@@ -25,9 +62,9 @@ const Home = () => {
                 <div className="col-6 searchbar form-inline">
                     <div className="home-head">Collab</div>
                     <div className="search">
-                        <input className="form-control search-input" onChange={ handleSearchChange } />
+                        <input className="form-control search-input" onChange={ handleSearchChange } value={search} />
                         <span className="search-btn" onClick={ handleSearch } >
-                            <img src={search_} />
+                            <img src={search_} className="search_img" />
                         </span>
                     </div>
                     
@@ -51,60 +88,42 @@ const Home = () => {
                 <div className="col-12 col-md-4 data">
                     <p className="data-head">Our Users</p>
                     <p className="data-desc">
-                    ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus enim. Quisque sed lorem malesuada, porttitor ligula in, fringilla lorem. Praesent id urna porta, efficitur ante vitae, dapibus lacus. Curabitur non porttitor metus. Integer eget erat ultrices, placerat risus eu, elementum velit. In effi
+                    <h4>Our data makes our webite more real and legitimate!</h4>
+                        <div className="info-desc">
+                            <p>The web site currently has students from 0 colleges</p>
+                            <p>which account to total 0 students</p>
+                            <p>from 0 states of the union of India</p>
+                        </div>
+                    <em>* Be the next one to join us and make new connections,find new buddy and add alot more to your projects, intern ...</em>
                     </p>
                 </div>
                 <div className="col-12 col-md-4 about">
                     <p className="about-head">About Us</p>
-                    <p className='about-desc'>lorem ipsum In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non tellus enim. Quisque sed lorem malesuada, porttitor ligula in, fringilla lorem. Praesent id urna porta, efficitur ante vitae, dapibus lacus. Curabitur non porttitor metus. Integer eget erat ultrices, placerat risus eu, elementum velit. In efficitur consequat lacinia. Donec metus velit, eleifend quis arcu eu, porttitor suscipit massaconvallis. Phasellus tincidunt justo in quam hendrerit mollis. Curabitur non neque ut purus dapibus sagittis. Curabitur bibendum eros tellus, id facilisis dolor fringilla quis. Quisque molestie tincidunt laoreet. </p>
+                    <p className='about-desc'>Collab - With specific focus on that section which generally from the rural setting. This site is a common integration among students of different institutions which aims to provide unfeigned content.
+                    It is platform where one can share their views, news or anything relatable to college/institute which can be beneficial for others also.It also helps to settle and make connections with the students which can help them in things other than learning like one can find his/her buddy for being roomate/flatmate. </p>
                 </div>
                 <div className="col-12 col-md-4 post-list">
                     <p className="collab-head">On the Top</p>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
+                        {   
+                            filter.length === 0 && result.map(item => {
+                                return (<div className="articles-list"><p className="link-article">
+                                    {item.title}
+                                    <p className="author">{item.author}</p>
+                                    <p className="tags">{item.tags}</p>
+                                </p></div>)
+                            })
+
+                        }
+
+                        {
+                            filter.length !== 0  && filter.map(item => {
+                                return (<div className="articles-list"><p className="link-article">
+                                    {item.title}
+                                    <p className="author">{item.author}</p>
+                                    <p className="tags">{item.tags}</p>
+                                </p></div>)
+                            })
+                        }
                 </div>
             </div>
         </div>
