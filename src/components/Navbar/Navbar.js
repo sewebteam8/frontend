@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>       
             {
                 drop && <div className="profile_">
-                    <div className="profile_links"> <NavLink to = "/authorise" >Login/logout</NavLink></div>
+                    <div className="profile_links"> <NavLink to = "/authorise" >Auth links</NavLink></div>
                     <div className="profile_links"> <NavLink to = "/edit" >Edit profile </NavLink></div>
                     <div className="profile_links"> <NavLink to = "/delete" >Delete my account </NavLink></div>
                 </div>
