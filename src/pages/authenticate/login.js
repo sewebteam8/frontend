@@ -32,7 +32,7 @@ class Login extends Component {
             email : this.state.account.email,
             password : this.state.account.password,
         }
-        axios.post('https://localhost:7000/services/login', data)
+        axios.post('https://se-web-app.herokuapp.com/services/login', data)
         .then((res) => {
             if(res.status === 200){
                 localStorage.setItem('cc-logged', true)
