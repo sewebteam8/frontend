@@ -7,6 +7,7 @@ import search_ from '../../Assets/search.png'
 const Home = () => {
 
     const [search,setSearch] = useState('');
+    const [filter,setFilter] = useState([]);
     const [result,setResult] = useState([
         {
             title : "first chapter in my college",
@@ -19,14 +20,28 @@ const Home = () => {
             tags : "#university, #secondchap"
         }
     ]);
+    
 
-    const  handleSearch = () => {
-
+    const  handleSearch = (e) => {
+        for(let i = 0; i < result.length; i++){
+            if(result[i].title.includes(search)){
+                setFilter(filter.concat(result[i]));
+            }
+            else if(result[i].author.includes(search)){
+                setFilter(filter.concat(result[i]));
+            }
+            else if(result[i].tags.includes(search)){
+                setFilter(filter.concat(result[i]));
+            }
+        }
     }
 
-    const handleSearchChange = () => {
-
-    }
+    const handleSearchChange = (e) => {
+        if(e.currentTarget.value.length === 0){
+            setFilter([]);
+        }
+        setSearch(e.currentTarget.value)
+    }   
 
     return ( 
         <div className="container-fluid home"> 
@@ -72,15 +87,26 @@ const Home = () => {
                 </div>
                 <div className="col-12 col-md-4 post-list">
                     <p className="collab-head">On the Top</p>
-                    {
-                        result.map((item) => {
-                            <div className="articles-list"><p className="link-article">
-                                {item.title}
-                                <p className="author">{item.author}</p>
-                                <p className="tags">{item.tags}</p>
-                            </p></div>
-                        })
-                    }
+                        {   
+                            filter.length === 0 && result.map(item => {
+                                return (<div className="articles-list"><p className="link-article">
+                                    {item.title}
+                                    <p className="author">{item.author}</p>
+                                    <p className="tags">{item.tags}</p>
+                                </p></div>)
+                            })
+
+                        }
+
+                        {
+                            filter.length !== 0  && filter.map(item => {
+                                return (<div className="articles-list"><p className="link-article">
+                                    {item.title}
+                                    <p className="author">{item.author}</p>
+                                    <p className="tags">{item.tags}</p>
+                                </p></div>)
+                            })
+                        }
                 </div>
             </div>
         </div>
