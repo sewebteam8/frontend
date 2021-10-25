@@ -6,15 +6,19 @@ class Navbar extends Component {
     render() { 
         return( 
             <React.Fragment>
-                <div className="container navbar_">
+                <div className="container-fluid navbar_">
                     <div className="row">
-                    
-                        <div className="col-4 navHead">
+
+                        <div className="col-2 navHead">
                            <Link to = "/" > Collab </Link> 
                         </div>
 
                         <div className="col-2 navLinks">
                            <Link to = "/" > Donate </Link> 
+                        </div>
+
+                        <div className="col-2 navLinks">
+                           <Link to = "/contact" > Contact </Link> 
                         </div>
 
                         <div className="col-2 navLinks">
