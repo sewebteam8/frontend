@@ -48,7 +48,7 @@ const Contact = () => {
             };
 
             
-            axios.post('http://localhost:7000/services/enqMail' ,data)
+            axios.post('https://se-web-app.herokuapp.com/services/enqMail' ,data)
             .then((res) => {
                 toast(`you will be contacted soon`);
                 setName('');

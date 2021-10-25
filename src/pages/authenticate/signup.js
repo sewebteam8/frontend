@@ -35,7 +35,7 @@ class Signup extends Component {
                 name : this.state.account.name,
             }
 
-            axios.post('https://localhost:7000/services/signup', data)
+            axios.post('https://se-web-app.herokuapp.com/services/signup', data)
             .then((res) => {
                 this.props.history.push('/');
                 let account = {...this.state.account};
