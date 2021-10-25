@@ -3,8 +3,8 @@ import axios from 'axios';
 import { ToastContainer } from 'react-toastify'
 import '../../../node_modules/react-toastify/dist/ReactToastify.css'
 import { toast } from 'react-toastify'
-import contactUS from './contactusImg.png'
-import FAQ from './faq.png'
+import contactUS from '../../Assets/contactusImg.png'
+import FAQ from '../../Assets/faq.png'
 import './contact.css';
 
 const Contact = () => {
