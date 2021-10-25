@@ -104,12 +104,20 @@
     margin-top: 40px;
 }
 
+.search_img{
+    width: 100%;
+    height: 100%;
+}
+
 .search-btn{
+    margin: 4px 0px;
+    border-radius: 8%;
     background-color: rgb(75, 219, 75);
     padding: 10px;
     cursor: pointer;
 }
 
 .search-input{
+    padding: 10px;
     background-color: rgb(166, 219, 166);
 }

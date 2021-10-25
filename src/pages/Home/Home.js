@@ -7,6 +7,18 @@ import search_ from '../../Assets/search.png'
 const Home = () => {
 
     const [search,setSearch] = useState('');
+    const [result,setResult] = useState([
+        {
+            title : "first chapter in my college",
+            author : "Talha",
+            tags : "#college, #firstchap"
+        },
+        {
+            title : "second chapter in my university",
+            author : "Talha",
+            tags : "#university, #secondchap"
+        }
+    ]);
 
     const  handleSearch = () => {
 
@@ -25,9 +37,9 @@ const Home = () => {
                 <div className="col-6 searchbar form-inline">
                     <div className="home-head">Collab</div>
                     <div className="search">
-                        <input className="form-control search-input" onChange={ handleSearchChange } />
+                        <input className="form-control search-input" onChange={ handleSearchChange } value={search} />
                         <span className="search-btn" onClick={ handleSearch } >
-                            <img src={search_} />
+                            <img src={search_} className="search_img" />
                         </span>
                     </div>
                     
@@ -60,51 +72,15 @@ const Home = () => {
                 </div>
                 <div className="col-12 col-md-4 post-list">
                     <p className="collab-head">On the Top</p>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
-                    <div className="articles-list"><p className="link-article">
-                        eleifend quis arcu eu, porttitor suscipit massa
-                        <p className="author">Author name</p>
-                        <p className="tags">#abc, #def, #ghf</p>
-                    </p></div>
+                    {
+                        result.map((item) => {
+                            <div className="articles-list"><p className="link-article">
+                                {item.title}
+                                <p className="author">{item.author}</p>
+                                <p className="tags">{item.tags}</p>
+                            </p></div>
+                        })
+                    }
                 </div>
             </div>
         </div>
