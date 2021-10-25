@@ -56,10 +56,10 @@ const Home = () => {
     return ( 
         <div className="container-fluid home"> 
             <div className="row">
-                <div className="col-6">
+                <div className="col-12 col-md-6">
                     <img src={bck1} className="img-1"/>
                 </div>
-                <div className="col-6 searchbar form-inline">
+                <div className="col-12 col-md-6 searchbar form-inline">
                     <div className="home-head">Collab</div>
                     <div className="search">
                         <input className="form-control search-input" onChange={ handleSearchChange } value={search} />
@@ -67,21 +67,20 @@ const Home = () => {
                             <img src={search_} className="search_img" />
                         </span>
                     </div>
-                    
                 </div>
             </div>
 
             <div className="shorts-wrapper">
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
-                <div className="col-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
+                <div className="col-5 col-md-3 shorts"></div>
             </div>
 
             <div className="about-list-data-wrapper row">

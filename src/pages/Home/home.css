@@ -129,3 +129,16 @@
     padding: 10px;
     background-color: rgb(166, 219, 166);
 }
+
+@media (max-width: 770px) {
+    .home-head{
+        font-size: 40px;
+        margin: 0px;
+        margin-top: -20px;
+        width: 100%;
+    }
+
+    .searchbar{
+        width: 100%;
+    }
+}
