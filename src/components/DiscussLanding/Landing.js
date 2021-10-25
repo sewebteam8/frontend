@@ -1,5 +1,5 @@
 import './landing.css'
-const Landing = () => {
+const Landing = ({ onNext }) => {
   return (
     <div className="landing-container p-5">
         <div className="inner-landing-continer row">
@@ -12,7 +12,7 @@ const Landing = () => {
                   </p>
                   <div class="chat_img d-flex flex-row ">
                       <img src='./images/chat_img.jpg' />
-                      <button>start</button>
+                      <button onClick={onNext}>Start</button>
                   </div>
               </div>
               
