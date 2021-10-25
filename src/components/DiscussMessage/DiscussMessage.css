@@ -1,0 +1,116 @@
+.meesage-page-main-box
+{
+    background-color: #0A0C16;
+    height: 100vh;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.container
+{
+    height: 100%;
+}
+.row
+{
+    height: 100%;
+   
+}
+.message-page-main-inner-box
+{
+    border-radius: 10%;
+}
+.user-probile-box
+{
+    background-color: #1a1e2a;
+    height:100% ;
+    color:white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    
+}
+.user-img>img{
+    width: 100%;
+    padding: 10%;
+    border-radius: 50%;
+
+}
+
+.users-box
+{
+    background-color: #1a1e2a;
+    height:100%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    color: white;
+    padding-top: 2%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.users-box>input
+{
+    background-color:#171717;
+    border: none;
+    
+}
+.users-profile-div
+{
+    margin-top: 5%;
+}
+.users-profile-div>img{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    
+}
+.users-desc
+{
+    padding-left: 6%;
+    /* padding-top: 0.2%; */
+}
+.name
+{
+    color:white;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.users-collegename
+{
+    font-size: 10px;
+    text-align: right;
+}
+.message-first
+{
+     color:#171717;
+     font-weight: 300;
+     font-size: 16px;
+}
+.messages-box
+{
+    background-color: #171717;
+    height:100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-top: 1.2%;  
+    
+}
+.current-user-conversation-profile>img
+{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.current-user-conversation-profile-name
+{
+    color:aliceblue;
+    padding-left: 1.5%;
+    padding-top: 1%;
+}
+.horizontal-line
+{
+    
+    border-width:0;
+    color:gray;
+    background-color:gray;
+    padding-top: 0px;
+}
