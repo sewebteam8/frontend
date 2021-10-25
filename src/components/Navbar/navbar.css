@@ -12,3 +12,27 @@
     font-weight: 700;
     font-size: 22px;
 }
+
+.profile_{
+    position: absolute;
+    right: 0px;
+    min-width: 300px;
+    width: 11%;
+    height: 300px;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 2px black;
+    background-color: #171717;
+}
+
+.profile_links{
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    padding-left: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.profile_links:hover{
+    color: green;
+}
