@@ -1,6 +1,7 @@
 import Home from './pages/Home/Home'
 import NavBar from './components/Navbar/Navbar';
 import Discuss from './pages/Discussion/Discuss'
+import FindBuddy from './pages/FindYourBuddy/FindBuddy';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
@@ -21,6 +22,9 @@ function App () {
           </Route>
           <Route exact path="/contact">
             <Contact />
+          </Route>
+           <Route exact path="/findbuddy">
+            <FindBuddy />
           </Route>
         </Switch>
         <Footer/>

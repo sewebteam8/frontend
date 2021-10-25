@@ -26,7 +26,7 @@ class Navbar extends Component {
                         </div>
 
                         <div className="col-2 navLinks">
-                             <Link to = "/" > Find Your Buddy </Link>
+                             <Link to = "/findbuddy" > Find Your Buddy </Link>
                         </div>
 
                         <div className="col-2 navLinks">
