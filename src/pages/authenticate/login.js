@@ -16,7 +16,7 @@ class Login extends Component {
 
     componentDidMount() {
         if(localStorage.getItem('cc-logged') === 'true'){
-            this.props.history.push('/');
+            // this.props.history.push('/');
         }
     }
 
@@ -33,10 +33,18 @@ class Login extends Component {
             password : this.state.account.password,
         }
         axios.post('https://se-web-app.herokuapp.com/services/login', data)
+        
         .then((res) => {
-            if(res.status === 200){
+            if(res.status === 201){
                 localStorage.setItem('cc-logged', true)
-                this.props.history.push('/');
+                localStorage.setItem('currentUser', JSON.stringify(res.data));
+                let account = {...this.state.account};
+                account.email = ""
+                account.password = ""
+                this.setState({account})
+                console.log(res)
+                // this.props.history.push('/');
+
                 toast(`Login successfull`)
             }  
         })
