@@ -1,9 +1,16 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
+import { Redirect } from 'react-router';
 import './DiscussMessage.css'
-import  Users  from '../DiscussUsers/DiscussUsers'
+import Users from '../DiscussUsers/DiscussUsers'
+import ChatBox from '../ChatBox/ChatBox';
 function DiscussMessage() {
     const [user, setUser] = useState(null);
-    console.log(user);
+    const account = JSON.parse(localStorage.getItem('currentUser')).user;
+    // if (account === undefined) {
+    //     <Redirect to="/authorise" />
+    //     console.log(account);
+    // }
+    
     return (
         <div className="meesage-page-main-box">
             <div className="container">
@@ -31,14 +38,20 @@ function DiscussMessage() {
                                 <p className="users-collegename">B.S.R collge alwar Raj.</p>
                             </div>
                         </div> */}
-                    <Users setUser={setUser} />   
+                        <Users setUser={setUser} account={account}/>
                     </div>
                     <div className="messages-box col-8">
-                        <div className="current-user-conversation-profile d-flex flex-row">
+                        {/* <div className="current-user-conversation-profile d-flex flex-row">
                             <img src="images/dummy1_user.jpg" />
                             <p className="current-user-conversation-profile-name">Maris Mano</p>
                         </div>
-                        <hr className="horizontal-line" />
+                        <hr className="horizontal-line" /> */}
+                        {
+                           
+                            user ? <ChatBox person={user} account={account} /> : <p>raj</p>
+                           
+                        }
+                        
                         
                     </div>
                 </div>

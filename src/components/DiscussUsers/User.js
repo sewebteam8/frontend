@@ -22,21 +22,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const User = ({setUser, user }) => {
+const User = ({setUser, user,account}) => {
     const classes = useStyles();
     const [message, setMessage] = useState({});
 
-    useEffect(() => {
-        const getConversationMessage = async() => {
-            const data = await getConversation({ sender: '', receiver: ''});
-            // setMessage({ text: data.message, timestamp: data.updatedAt });
-        }
-        getConversationMessage();
-    }, []);
+    // useEffect(() => {
+    //     const getConversationMessage = async() => {
+    //         const data = await getConversation({ sender: '', receiver: ''});
+    //         // setMessage({ text: data.message, timestamp: data.updatedAt });
+    //     }
+    //     getConversationMessage();
+    // }, []);
 
     const getUser = async () => {
         setUser(user);
-        await setConversation({ senderId: '', receiverId: user._id });
+        await setConversation({ senderId: account._id, receiverId: user._id });
     }
 
     const getTime = (time) => {

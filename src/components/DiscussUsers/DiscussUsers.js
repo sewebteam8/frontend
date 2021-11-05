@@ -35,13 +35,13 @@ const Users = (props) => {
    }, [newUser]);
 
  
-
+//   console.log(props.account);
   return (
     <List className={classes.list}>
       {users && (
         <React.Fragment>
           {users.map((u) => (
-           <User user={u} setUser={props.setUser}/>
+              <User user={u} setUser={props.setUser} account={ props.account}/>
           ))}
         </React.Fragment>
       )}
