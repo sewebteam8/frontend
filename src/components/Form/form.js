@@ -19,7 +19,7 @@ const Form = () => {
             amount : amount
         }
 
-        axios.get('http://localhost:4000');
+        axios.get('https://collegecollab001.herokuapp.com/');
     }
 
     const handleChange = (e) => {
