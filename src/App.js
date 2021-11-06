@@ -9,6 +9,7 @@ import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
 import Signup from './pages/authenticate/signup';
+import Form from './components/Form/form';
 
 function App () {
   return (
@@ -21,6 +22,9 @@ function App () {
           </Route>
           <Route exact path="/discuss">
             <Discuss />
+          </Route>
+          <Route exact path="/donate">
+            <Form />
           </Route>
           <Route exact path="/contact">
             <Contact />
