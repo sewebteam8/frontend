@@ -10,7 +10,7 @@ import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
 import Signup from './pages/authenticate/signup';
-
+import Profile from './components/Profile/Profile';
 function App () {
   return (
     <div className="App">
@@ -32,6 +32,9 @@ function App () {
           </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/profile">
+            <Profile/>
           </Route>
            <Route exact path="/findbuddy">
             <FindBuddy />
