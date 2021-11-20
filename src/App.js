@@ -10,7 +10,12 @@ import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
 import Signup from './pages/authenticate/signup';
+import Blog from './pages/blog/blog';
+import IndPost from './components/IndPost/post';
+import Form from './components/postForm/form';
+
 import Profile from './components/Profile/Profile';
+
 function App () {
   return (
     <div className="App">
@@ -23,6 +28,10 @@ function App () {
           <PrivateRoute path="/discuss" component={Discuss} />
           {/* <Route exact path="/discuss">
             <Discuss />
+          </Route>
+          <Route exact path="/donate">
+            <Form />
+          </Route>
           </Route> */}
           <Route exact path="/contact">
             <Contact />
@@ -30,18 +39,26 @@ function App () {
           <Route exact path="/authorise">
             <Login />
           </Route>
+          <Route exact path="/addform">
+            <Form />
+          </Route>
           <Route exact path="/signup">
             <Signup />
           </Route>
+          <Route exact path="/blog">
+            <Blog />
           <Route exact path="/profile">
             <Profile/>
           </Route>
            <Route exact path="/findbuddy">
             <FindBuddy />
           </Route>
+          <Route exact path="/singlepost/:id">
+            <IndPost />
+          </Route>
         </Switch>
         <Footer/>
-      </Router>
+        </Router>
     </div>
   );
 }
