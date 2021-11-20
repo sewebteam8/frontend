@@ -6,9 +6,9 @@ import search_ from '../../Assets/search.png'
 
 const Home = () => {
 
-    const [search,setSearch] = useState('');
-    const [filter,setFilter] = useState([]);
-    const [result,setResult] = useState([
+    const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState([]);
+    const [result, setResult] = useState([
         {
             title : "first chapter in my college",
             author : "Talha",

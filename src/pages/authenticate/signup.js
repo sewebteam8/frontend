@@ -37,13 +37,14 @@ class Signup extends Component {
 
             axios.post('https://se-web-app.herokuapp.com/services/signup', data)
             .then((res) => {
-                this.props.history.push('/');
+                // this.props.history.push('/');
                 let account = {...this.state.account};
                 account.email = ""
                 account.name = ""
                 account.password = ""
                 account.passwordCheck = ""
-                this.setState({account})
+                this.setState({ account })
+                localStorage.setItem('currentUser', JSON.stringify(res.data));
                 toast(`Signup successfull`)
             })
             .catch((err) => {
@@ -53,7 +54,7 @@ class Signup extends Component {
                 account.password = ""
                 account.passwordCheck = ""
                 this.setState({account})
-                toast(`Account taken`)
+                toast("SignUp failed")
             });
         }
     }

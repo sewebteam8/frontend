@@ -5,6 +5,7 @@ import FindBuddy from './pages/FindYourBuddy/FindBuddy';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
+import PrivateRoute from './utilities/privateRouter'
 import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
@@ -12,6 +13,8 @@ import Signup from './pages/authenticate/signup';
 import Blog from './pages/blog/blog';
 import IndPost from './components/IndPost/post';
 import Form from './components/postForm/form';
+
+import Profile from './components/Profile/Profile';
 
 function App () {
   return (
@@ -22,12 +25,14 @@ function App () {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/discuss">
+          <PrivateRoute path="/discuss" component={Discuss} />
+          {/* <Route exact path="/discuss">
             <Discuss />
           </Route>
           <Route exact path="/donate">
             <Form />
           </Route>
+          </Route> */}
           <Route exact path="/contact">
             <Contact />
           </Route>
@@ -42,6 +47,8 @@ function App () {
           </Route>
           <Route exact path="/blog">
             <Blog />
+          <Route exact path="/profile">
+            <Profile/>
           </Route>
            <Route exact path="/findbuddy">
             <FindBuddy />
