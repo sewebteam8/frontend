@@ -9,7 +9,9 @@ import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
 import Signup from './pages/authenticate/signup';
-import Form from './components/Form/form';
+import Blog from './pages/blog/blog';
+import IndPost from './components/IndPost/post';
+import Form from './components/postForm/form';
 
 function App () {
   return (
@@ -32,15 +34,24 @@ function App () {
           <Route exact path="/authorise">
             <Login />
           </Route>
+          <Route exact path="/addform">
+            <Form />
+          </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/blog">
+            <Blog />
           </Route>
            <Route exact path="/findbuddy">
             <FindBuddy />
           </Route>
+          <Route exact path="/singlepost/:id">
+            <IndPost />
+          </Route>
         </Switch>
         <Footer/>
-      </Router>
+        </Router>
     </div>
   );
 }

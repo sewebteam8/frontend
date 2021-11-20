@@ -26,6 +26,10 @@ const Navbar = () => {
                             <NavLink to = "/" > YourBuddy </NavLink>
                     </div>
 
+                    <div className="col-3 navLinks">
+                            <NavLink to = "/blog" > Blog </NavLink>
+                    </div>
+
                     <div className="col-2 navLinks">
                         <NavLink to = "/"><div onClick={handleClicks}> Donate </div> </NavLink>
                     </div>
