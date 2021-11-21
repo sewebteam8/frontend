@@ -13,6 +13,12 @@ import Signup from './pages/authenticate/signup';
 import ExamRequestForm from './components/ExamRequestForm/ExamRequestForm';
 import RoomPartnerFind from './components/RoomPartnerFind/RoomPartnerFind';
 import InternRequestForm from './components/InternRequestForm/InternrequestForm';
+import Blog from './pages/blog/blog';
+import IndPost from './components/IndPost/post';
+import Form from './components/postForm/form';
+
+import Profile from './components/Profile/Profile';
+
 function App () {
   return (
     <div className="App">
@@ -25,6 +31,10 @@ function App () {
           <PrivateRoute path="/discuss" component={Discuss} />
           {/* <Route exact path="/discuss">
             <Discuss />
+          </Route>
+          <Route exact path="/donate">
+            <Form />
+          </Route>
           </Route> */}
           <Route exact path="/contact">
             <Contact />
@@ -32,8 +42,17 @@ function App () {
           <Route exact path="/authorise">
             <Login />
           </Route>
+          <Route exact path="/addform">
+            <Form />
+          </Route>
           <Route exact path="/signup">
             <Signup />
+          </Route>
+          <Route exact path="/blog">
+            <Blog />
+            </Route>
+          <Route exact path="/profile">
+            <Profile/>
           </Route>
            <Route exact path="/findbuddy">
             <FindBuddy />
@@ -48,9 +67,12 @@ function App () {
                 <InternRequestForm/>
             </Route>
                   
+          <Route exact path="/singlepost/:id">
+            <IndPost />
+          </Route>
         </Switch>
         <Footer/>
-      </Router>
+        </Router>
     </div>
   );
 }

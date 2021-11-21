@@ -1,0 +1,16 @@
+.post_page{
+    background-color: #171717;
+    padding: 30px;
+}
+
+.post_pic{
+    width: 90%;
+    height: 92%;
+    margin-top: 45px;
+}
+
+@media (max-width: 991px) {
+    .post_pic{
+        display: none;
+    }
+}

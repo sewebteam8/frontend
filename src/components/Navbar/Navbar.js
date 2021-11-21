@@ -1,8 +1,11 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import './navbar.css';
 
 const Navbar = () => {
+    const handleClicks = () => {
+        window.open("http://localhost:4000/");
+    }
 
     const [drop,setDrop] = useState(false)
 
@@ -23,8 +26,12 @@ const Navbar = () => {
                             <NavLink to = "/findbuddy" > YourBuddy </NavLink>
                     </div>
 
+                    <div className="col-3 navLinks">
+                            <NavLink to = "/blog" > Blog </NavLink>
+                    </div>
+
                     <div className="col-2 navLinks">
-                        <NavLink to = "/" > Donate </NavLink> 
+                        <NavLink to = "/"><div onClick={handleClicks}> Donate </div> </NavLink>
                     </div>
 
                     
@@ -52,7 +59,7 @@ const Navbar = () => {
             {
                 drop && <div className="profile_">
                     <div className="profile_links"> <NavLink to = "/authorise" >Auth links</NavLink></div>
-                    <div className="profile_links"> <NavLink to = "/edit" >Edit profile </NavLink></div>
+                    <div className="profile_links"> <NavLink to = "/editprofile" >Edit profile </NavLink></div>
                     <div className="profile_links"> <NavLink to="/profile" >Profile </NavLink></div>
                      <div className="profile_links"> <NavLink to = "/logout">Delete my account </NavLink></div>
                 </div>
