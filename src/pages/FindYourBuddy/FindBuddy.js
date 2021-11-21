@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './FindBuddy.css'
 function FindBuddy() {
     return (
@@ -8,32 +9,29 @@ function FindBuddy() {
             < div className = "container " >
                 < div className = "row mt-5" >
                     <div className="col-3 buddy-card">
-                        
+                       <Link to="/examrequestform">find exam budyy</Link> 
                     </div>
-                    < div className = "col-1  " >
-                        
+                    <div className = "col-1">
                     </div>
                     < div className = "col-3 buddy-card" >
-                        
+                        <Link to="/findintern">find Intern</Link>
                     </div>
                      <div className="col-1 ">
-                        
                     </div>
                     < div className = "col-3  buddy-card" >
-                        
+                         <Link to="/examrequestform">find your collegemate</Link>
                     </div>
                    
                 
                 </div>
                 < div className = "row mt-5" >
                     <div className="col-3 buddy-card">
-                        
+                         <Link to="/findroompartner">Find your room partner</Link>
                     </div>
                     < div className = "col-1  " >
-                        
                     </div>
                     < div className = "col-3 buddy-card" >
-                        
+                         <Link to="/examrequestform">Find your project partner</Link>
                     </div>
                      <div className="col-1 ">
                         

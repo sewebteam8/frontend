@@ -40,6 +40,7 @@ class Login extends Component {
                 localStorage.setItem('currentUser', JSON.stringify(res.data));
                 let account = {...this.state.account};
                 account.email = ""
+                
                 account.password = ""
                 this.setState({account})
                 console.log(res)

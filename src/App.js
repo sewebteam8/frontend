@@ -10,7 +10,9 @@ import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
 import Signup from './pages/authenticate/signup';
-
+import ExamRequestForm from './components/ExamRequestForm/ExamRequestForm';
+import RoomPartnerFind from './components/RoomPartnerFind/RoomPartnerFind';
+import InternRequestForm from './components/InternRequestForm/InternrequestForm';
 function App () {
   return (
     <div className="App">
@@ -36,6 +38,16 @@ function App () {
            <Route exact path="/findbuddy">
             <FindBuddy />
           </Route>
+          <Route exact path='/examrequestform'>
+           <ExamRequestForm/>           
+            </Route>
+            <Route exact path='/findroompartner'>
+                <RoomPartnerFind/>    
+            </Route>
+            <Route exact path='/findintern'>
+                <InternRequestForm/>
+            </Route>
+                  
         </Switch>
         <Footer/>
       </Router>

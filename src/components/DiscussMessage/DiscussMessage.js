@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect,useRef} from 'react'
 import { Redirect } from 'react-router';
+import io from "socket.io-client";
 import './DiscussMessage.css'
 import Users from '../DiscussUsers/DiscussUsers'
 import ChatBox from '../ChatBox/ChatBox';
@@ -10,7 +11,12 @@ function DiscussMessage() {
     //     <Redirect to="/authorise" />
     //     console.log(account);
     // }
-    
+    // const socket=useRef() ;
+    // useEffect(() => {
+    //     socket.current = io('ws://localhost:9000');
+    // }, []);
+    const socket = io('ws://localhost:9000');
+    console.log(socket);
     return (
         <div className="meesage-page-main-box">
             <div className="container">
@@ -38,7 +44,7 @@ function DiscussMessage() {
                                 <p className="users-collegename">B.S.R collge alwar Raj.</p>
                             </div>
                         </div> */}
-                        <Users setUser={setUser} account={account}/>
+                        <Users setUser={setUser} account={account} socket={socket}/>
                     </div>
                     <div className="messages-box col-8">
                         {/* <div className="current-user-conversation-profile d-flex flex-row">
@@ -48,7 +54,7 @@ function DiscussMessage() {
                         <hr className="horizontal-line" /> */}
                         {
                            
-                            user ? <ChatBox person={user} account={account} /> : <p>raj</p>
+                            user ? <ChatBox person={user} account={account} socket={ socket}/> : <p>raj</p>
                            
                         }
                         
