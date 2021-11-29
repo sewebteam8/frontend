@@ -15,6 +15,7 @@ import IndPost from './components/IndPost/post';
 import Form from './components/postForm/form';
 
 import Profile from './components/Profile/Profile';
+import Pic from './components/pic/pic';
 
 function App () {
   return (
@@ -46,7 +47,11 @@ function App () {
           </Route>
           <Route exact path="/blog">
             <Blog />
+<<<<<<< Updated upstream
             </Route>
+=======
+          </Route>
+>>>>>>> Stashed changes
           <Route exact path="/profile">
             <Profile/>
           </Route>
@@ -59,6 +64,7 @@ function App () {
         </Switch>
         <Footer/>
         </Router>
+        <Pic />
     </div>
   );
 }
