@@ -5,7 +5,6 @@ import FindBuddy from './pages/FindYourBuddy/FindBuddy';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
-import PrivateRoute from './utilities/privateRouter'
 import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
@@ -28,7 +27,11 @@ function App () {
           <Route exact path="/">
             <Home />
           </Route>
-          <PrivateRoute path="/discuss" component={Discuss} />
+            <Route exact path="/discuss">
+                <Discuss/>
+            </Route>
+
+                  
           {/* <Route exact path="/discuss">
             <Discuss />
           </Route>

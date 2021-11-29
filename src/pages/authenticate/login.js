@@ -15,9 +15,11 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        if(localStorage.getItem('cc-logged') === 'true'){
-            // this.props.history.push('/');
+        if (localStorage.getItem('cc-logged') === 'true') {
+            console.log("logged")
+            window.open('/');
         }
+        else console.log("failed")
     }
 
     handleChange = (e) => {
@@ -44,7 +46,7 @@ class Login extends Component {
                 account.password = ""
                 this.setState({account})
                 console.log(res)
-                // this.props.history.push('/');
+                window.open('/');
 
                 toast(`Login successfull`)
             }  

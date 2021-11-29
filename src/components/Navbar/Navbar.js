@@ -12,6 +12,12 @@ const Navbar = () => {
     const handleClick = () => {
         setDrop(!drop)
     }
+    
+    const handleLogout = () => {
+        localStorage.removeItem('cc-logged');
+        localStorage.removeItem('currentUser');
+        window.location.reload();
+    }
 
     return( 
         <React.Fragment>
@@ -61,7 +67,8 @@ const Navbar = () => {
                     <div className="profile_links"> <NavLink to = "/authorise" >Auth links</NavLink></div>
                     <div className="profile_links"> <NavLink to = "/editprofile" >Edit profile </NavLink></div>
                     <div className="profile_links"> <NavLink to="/profile" >Profile </NavLink></div>
-                     <div className="profile_links"> <NavLink to = "/logout">Delete my account </NavLink></div>
+                     <div className="profile_links"> <NavLink to = "/delete">Delete my account </NavLink></div>
+                     <div className="profile_links" onClick={handleLogout}> <NavLink to = "">logout </NavLink></div>
                 </div>
             }
         </React.Fragment>
