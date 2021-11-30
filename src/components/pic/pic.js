@@ -23,7 +23,6 @@ class Pic extends Component {
         e.preventDefault();
         var fd = new FormData();
         fd.append("pic",this.state.pic);
-        fd.append("email",)
 
         axios.post("http://localhost:7000/services/upload", fd)
         .then((res) => {

@@ -37,6 +37,7 @@ const Home = () => {
         axios.get("http://localhost:7000/services/uploadpic")
         .then((res) => {
             console.log(res.data);
+            setShort(res.data);
         })
         .catch((err) => {
             console.log(err);
@@ -83,16 +84,15 @@ const Home = () => {
             </div>
 
             <div className="shorts-wrapper">
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
+                {
+                    short.map(item => {
+                       return( 
+                            <div className="col-5 col-md-3 shorts">
+                                <img src={`http://localhost:7000/${item.name}`} className="img-short" />
+                            </div>
+                       );
+                    })
+                }
             </div>
 
             <div className="about-list-data-wrapper row">
