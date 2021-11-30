@@ -47,11 +47,7 @@ function App () {
           </Route>
           <Route exact path="/blog">
             <Blog />
-<<<<<<< Updated upstream
             </Route>
-=======
-          </Route>
->>>>>>> Stashed changes
           <Route exact path="/profile">
             <Profile/>
           </Route>
