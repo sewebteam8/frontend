@@ -4,7 +4,7 @@ import './navbar.css';
 
 const Navbar = () => {
     const handleClicks = () => {
-        window.open("http://localhost:4000/");
+        window.open("https://collegecollab001.herokuapp.com/");
     }
 
     const [drop,setDrop] = useState(false)

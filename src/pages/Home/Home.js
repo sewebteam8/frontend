@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './home.css'
 import bck1 from '../../Assets/homeB1.png'
 import search_ from '../../Assets/search.png'
+import axios from 'axios';
 
 
 const Home = () => {
 
+    const [short, setShort] = useState([]);
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState([]);
     const [result, setResult] = useState([
@@ -30,6 +32,16 @@ const Home = () => {
             tags : "#university, #secondchap"
         }
     ]);
+
+    useEffect(() => {
+        axios.get("http://localhost:7000/services/uploadpic")
+        .then((res) => {
+            console.log(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    },[])
     
 
     const  handleSearch = (e) => {

@@ -5,16 +5,25 @@ class Pic extends Component {
 
     state = {
         pic : null,
+        email : "",
     }
 
     handleChange = (e) => {
         this.setState({pic:e.target.files[0]});
     }
 
+    componentDidMount() {
+        // const data = localStorage.getItem("currentUser");
+        // const useremail = data.user.email;
+        // this.setState({email : useremail});
+        // console.log(useremail);
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         var fd = new FormData();
         fd.append("pic",this.state.pic);
+        fd.append("email",)
 
         axios.post("http://localhost:7000/services/upload", fd)
         .then((res) => {
