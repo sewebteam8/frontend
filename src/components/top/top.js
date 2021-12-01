@@ -9,8 +9,7 @@ const Top = () => {
     useEffect(() => {
         axios.get(`http://localhost:7000/services/blog/get`)
         .then((res) => {
-            setData(res.data);
-            console.log(res.data)
+            setData(res.data.slice(0,7));
         })
         .catch((err) => {
             console.log(err.message)

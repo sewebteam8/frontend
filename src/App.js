@@ -30,6 +30,9 @@ function App () {
           <Route exact path="/discuss">
              <Discuss />
           </Route>
+          <Route exact path="/pic">
+             <Pic />
+          </Route>
           <Route exact path="/donate">
             <Form />
           </Route>
@@ -60,7 +63,6 @@ function App () {
         </Switch>
         <Footer/>
         </Router>
-        <Pic />
     </div>
   );
 }

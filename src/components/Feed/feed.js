@@ -9,10 +9,10 @@ const Feed = () => {
     const [posts,setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:7000/services/blog/get')
+        axios.get('https://se-web-app.herokuapp.com/services/blog/get')
         .then((res) => {
             console.log(res.data);
-            setPosts(res.data)
+            setPosts(res.data);
         })
         .catch((err) => {
             console.log(err.mesasge);

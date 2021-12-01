@@ -45,7 +45,7 @@ const Home = () => {
     },[])
     
 
-    const  handleSearch = (e) => {
+    const handleSearch = (e) => {
         for(let i = 0; i < result.length; i++){
             if(result[i].title.includes(search)){
                 setFilter(filter.concat(result[i]));
