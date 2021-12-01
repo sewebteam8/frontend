@@ -5,7 +5,7 @@ import './navbar.css';
 
 const NavbarComponent = () => {
     const handleClicks = () => {
-        window.open("http://localhost:4000/");
+        window.open("https://collegecollab001.herokuapp.com/");
     }
 
     const [drop,setDrop] = useState(false)
@@ -32,6 +32,7 @@ const NavbarComponent = () => {
                     <Nav.Link href="/">Collab</Nav.Link>
                     <Nav.Link href="/findbuddy">Your buddy</Nav.Link>
                     <Nav.Link href="/blog">Blog</Nav.Link>
+                    <Nav.Link href="/pic">Pic</Nav.Link>
                     <Nav.Link href="/"><div onClick={handleClicks}>  Donate </div></Nav.Link>
                     <Nav.Link href="/discuss">Discuss</Nav.Link>
                     <Nav.Link href="/contact">Contact</Nav.Link>

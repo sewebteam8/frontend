@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './home.css'
 import bck1 from '../../Assets/homeB1.png'
 import search_ from '../../Assets/search.png'
+import axios from 'axios';
 
 
 const Home = () => {
 
+    const [short, setShort] = useState([]);
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState([]);
     const [result, setResult] = useState([
@@ -30,9 +32,20 @@ const Home = () => {
             tags : "#university, #secondchap"
         }
     ]);
+
+    useEffect(() => {
+        axios.get("http://localhost:7000/services/uploadpic")
+        .then((res) => {
+            console.log(res.data);
+            setShort(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    },[])
     
 
-    const  handleSearch = (e) => {
+    const handleSearch = (e) => {
         for(let i = 0; i < result.length; i++){
             if(result[i].title.includes(search)){
                 setFilter(filter.concat(result[i]));
@@ -71,16 +84,15 @@ const Home = () => {
             </div>
 
             <div className="shorts-wrapper">
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
-                <div className="col-5 col-md-3 shorts"></div>
+                {
+                    short.map(item => {
+                       return( 
+                            <div className="col-5 col-md-3 shorts">
+                                <img src={`http://localhost:7000/${item.name}`} className="img-short" />
+                            </div>
+                       );
+                    })
+                }
             </div>
 
             <div className="about-list-data-wrapper row">
