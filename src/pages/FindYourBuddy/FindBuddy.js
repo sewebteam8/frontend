@@ -9,35 +9,47 @@ function FindBuddy() {
             < div className = "container " >
                 < div className = "row mt-5" >
                     <div className="col-3 buddy-card">
-                       <Link to="/examrequestform">find exam budyy</Link> 
+                        <p className='buddy-card-desc'>Find your exam mate</p>
+                        <img src="images/examfind.webp" alt="exam-mate" />
+                        <button class="btn"><Link to="/examrequestform">GO</Link></button>
                     </div>
                     <div className = "col-1">
                     </div>
-                    < div className = "col-3 buddy-card" >
-                        <Link to="/findintern">find Intern</Link>
+                    < div className="col-3 buddy-card" >
+                        <p className='buddy-card-desc'>Find your Intern</p>
+                        <img src="images/internfind.webp" alt="intern" />
+                        <button class="btn"><Link to="/findintern">GO</Link></button>
+                        
                     </div>
                      <div className="col-1 ">
                     </div>
-                    < div className = "col-3  buddy-card" >
-                         <Link to="/examrequestform">find your collegemate</Link>
+                    < div className="col-3  buddy-card" >
+                         <p className='buddy-card-desc'>Find your college buddy</p>
+                         <img src='images/collagematefind.webp'/>
+                         <button class="btn"><Link to="/examrequestform">GO</Link></button>
                     </div>
                    
                 
                 </div>
                 < div className = "row mt-5" >
                     <div className="col-3 buddy-card">
-                         <Link to="/findroompartner">Find your room partner</Link>
+                         <p className='buddy-card-desc'>find your room partner</p>
+                         <img src="images/roompartner.webp" alt="Avatar" className="avatar" />
+                        <button class="btn"><Link to="/findroompartner">GO</Link></button>
                     </div>
                     < div className = "col-1  " >
                     </div>
-                    < div className = "col-3 buddy-card" >
-                         <Link to="/examrequestform">Find your project partner</Link>
+                    < div className="col-3 buddy-card" >
+                         <p className='buddy-card-desc'>find your project partner</p>
+                        <img src="images/projectpartner.webp" alt="Avatar" className="avatar" />
+                        <button class="btn"><Link to="/examrequestform">GO</Link></button>
+                       
                     </div>
                      <div className="col-1 ">
                         
                     </div>
                     < div className = "col-3  buddy-card" >
-                        
+                       
                     </div>
                    
                 

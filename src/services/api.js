@@ -31,3 +31,24 @@ export const newMessages = async (data) => {
         console.log('Error while calling newConversations API ', error);
     }
 }
+export const addExamRequestForm = async (data) => {
+    try {
+        return await axios.post(`https://se-web-app.herokuapp.com/services/examrequestform`, data);
+    } catch (error) {
+        console.log('Error while calling addExamRequestForm API ', error);
+    }
+}
+export const addInternRequestForm = async (data) => {
+    try {
+        return await axios.post(`https://se-web-app.herokuapp.com/services//findintern`, data);
+    } catch (error) {
+        console.log('Error while calling addInternRequestForm API ', error);
+    }
+}
+export const addFindRoomPartner = async (data) => {
+    try {
+        return await axios.post(`https://se-web-app.herokuapp.com/services/findroompartner`, data);
+    } catch (error) {
+        console.log('Error while calling addFindRoomPartner API ', error);
+    }
+}

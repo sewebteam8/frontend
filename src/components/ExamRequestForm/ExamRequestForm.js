@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Formik, Form,Field,ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 // import  { Button } from 'react-bootstrap';
-
+import { ToastContainer,toast } from 'react-toastify'
 import "./examrequestform.css"
-
+import { addExamRequestForm } from '../../services/api';
 const CreateExamequestFormSchema = Yup.object().shape({
     examineeName: Yup.string().required('Fullname is required'),
     examName: Yup.string().required('Exam name is Required'),
@@ -13,146 +13,112 @@ const CreateExamequestFormSchema = Yup.object().shape({
     examDate: Yup.date().required('Exam date is Required'),
     examTime: Yup.string().required('Exam time is Required'),
     examVenue: Yup.string().required('Exam venue is Required'),
-    examDuration: Yup.string().required('Exam duration is Required'),
+    examDuration: Yup.number().required('Exam duration is Required'),
     examineeAddress: Yup.string().required('Examinee`s address is Required'),
 
 });
 
 
 const ExamRequestForm = () => {
-    const [initialValue, setInitialValue] = useState({
-        examineeName: "",
-        examName: "",
-        examCityName: "",
-        examineeAge: "",
-        examDate: "",
-        examineeAddress: "",
-    
+    const [examRequest, setExamRequest] = useState({
+        examineeName: '',
+        examName: '',
+        examineeAge: '',
+        examCityName: '',
+        examDate: '',
+        examTime: '',
+        examVenue: '',
+        examDuration: '',
+        examineeAddress: '',
     });
-
-    // const handleSubmit = (data) => {
-    //     alert(JSON.stringify(data));
-    //     console.log(JSON.stringify(data, null, 2));
-
-    // }
-   
-    
-
+    const handleSubmit = (values,{resetForm}) => {
+        console.log(values);
+        addExamRequestForm(values)
+        resetForm();
+        setExamRequest({
+            examineeName: '',
+            examName: '',
+            examineeAge: '',
+            examCityName: '',
+            examDate: '',
+            examTime: '',
+            examVenue: '',
+            examDuration: '',
+            examineeAddress: '',
+        })
+        toast(`Exam Details Submitted Successfully`)
+    }
     return (
-        <div className="examrequestform-container">
-            <div className="examrequestform-container-inner" >
-               <h1 className="examrequestform-head">Find Your Exam Buddy</h1> 
-                 <Formik
-                    initialValues={initialValue}
-                    // enableReinitialize={true}
-                    validationSchema={CreateExamequestFormSchema}
-                    onSubmit={values => {
-                        // same shape as initial values
-                        console.log(values);
-                    }}
-            >
-                {({resetForm }) => {
-                    return (
-                        <div className="createQuestionsForm scrollableFormWrapper">
-                            <Form>
-                                <div className="row">
-
-                                <div className="col-5">
-                                    <div className="form-group">
-                                            <label>Full Name</label>
-                                            <Field name="examineeName" type="text" className="form-control" />
-                                            <ErrorMessage
-                                            name="examineeName"
-                                            component="div"
-                                            className="text-danger"
-                                            />
-                                        </div>
-    
-                                    </div>
-                                    <div className="col-2"></div>
-                                    <div className="col-5">
-                                    <div className="form-group">
-                                            <label>Enter Age</label>
-                                            <Field name="examineeAge" type="number" className="form-control" />
-                                            <ErrorMessage
-                                            name="examineeAge"
-                                            component="div"
-                                            className="text-danger"
-                                            />
-                                        </div>
-    
-                                    </div>
-
-                                    <div className="col-5">
-                                    <div className="form-group">
-                                            <label>Enter Your full Adreess</label>
-                                            <Field name="examineeAddress" type="text" className="form-control" />
-                                            <ErrorMessage
-                                            name ="examineeAddress"
-                                            component="div"
-                                            className="text-danger"
-                                            />
-                                        </div>
-    
-                                    </div>
-                                    <div className="col-2"></div>
-                                    <div className="col-5">
-                                    <div className="form-group">
-                                            <label>Enter Exam Name</label>
-                                            <Field name="examName" type="text" className="form-control" />
-                                            <ErrorMessage
-                                            name="examName"
-                                            component="div"
-                                            className="text-danger"
-                                            />
-                                        </div>
-    
-                                    </div>
-                                    
-                                    <div className="col-5">
-                                    <div className="form-group">
-                                            <label>Enter Exam city Name</label>
-                                            <Field name="examCityName" type="text" className="form-control" />
-                                            <ErrorMessage
-                                            name ="examCityName"
-                                            component="div"
-                                            className="text-danger"
-                                            />
-                                        </div>
-    
-                                    </div>
-                                    <div className="col-2"></div>
-                                    <div className="col-5">
-                                    <div className="form-group">
-                                            <label>Enter Exam Date</label>
-                                            <Field name="examDate" type="text" className="form-control" />
-                                            <ErrorMessage
-                                            name="examDate"
-                                            component="div"
-                                            className="text-danger"
-                                            />
-                                        </div>
-    
+       <div className="examrequestform-container">
+            <div className="examrequestform-container-inner">
+                <ToastContainer></ToastContainer>
+                <h1 className="examrequestform-head">Find your exam companion here</h1>
+                <div className="examrequestform">
+                    <Formik
+                        initialValues={examRequest}
+                        validationSchema={CreateExamequestFormSchema}
+                        onSubmit={handleSubmit}
+                    >
+                        {({ errors, touched }) => (
+                            <Form className="exam-request-form">
+                                <div className="form-group">
+                                    <label htmlFor="examineeName">Fullname</label>
+                                    <Field name="examineeName" type="text" className={`form-control ${errors.examineeName && touched.examineeName ? 'is-invalid' : ''}`} />
+                                    < ErrorMessage name = "examineeName" component = "div" className = "invalid-feedback" / >
                                 </div>
-
-
+                                <div className="form-group">
+                                    <label htmlFor="examName">Exam Name</label>
+                                    <Field name="examName" type="text" className={`form-control ${errors.examName && touched.examName ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examName"  component="div" className="invalid-feedback"/>
                                 </div>
-
-                                <div className="floating-btn-grp ">
-                                    <button type="button" onClick={resetForm} className="button-container">
-                                        Submit 
-                                    </button>
+                                <div className="form-group">
+                                    <label htmlFor="examineeAge">Examinee`s Age</label>
+                                    <Field name="examineeAge" type="text" className={`form-control ${errors.examineeAge && touched.examineeAge ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examineeAge"  component="div"
+                                        className="invalid-feedback" />
                                 </div>
-                            
+                                <div className="form-group">
+                                    <label htmlFor="examCityName">Exam City</label>
+                                    <Field name="examCityName" type="text" className={`form-control ${errors.examCityName && touched.examCityName ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examCityName"  component="div" className="invalid-feedback" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="examDate">Exam Date</label>
+                                    <Field name="examDate" type="date" className={`form-control ${errors.examDate && touched.examDate ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examDate"  component="div" className="invalid-feedback" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="examTime">Exam Time</label>
+                                    <Field name="examTime" type="text" className={`form-control ${errors.examTime && touched.examTime ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examTime"  component="div" className="invalid-feedback" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="examVenue">Exam Venue</label>
+                                    <Field name="examVenue" type="text" className={`form-control ${errors.examVenue && touched.examVenue ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examVenue"  component="div" className="invalid-feedback" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="examDuration">Exam Duration</label>
+                                    <Field name="examDuration" type="text" className={`form-control ${errors.examDuration && touched.examDuration ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examDuration"  component="div" className="invalid-feedback" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="examineeAddress">Examinee`s Address</label>
+
+                                    <Field name="examineeAddress" type="text" className={`form-control ${errors.examineeAddress && touched.examineeAddress ? 'is-invalid' : ''}`} />
+                                    <ErrorMessage name="examineeAddress"  component="div" className="invalid-feedback" />
+                                </div>
+                                <div className="form-group">
+                                    <button type="submit" className="btn btn-primary">Submit</button>
+                                </div>
                             </Form>
-                        </div>
-                    )
-                }}
-                </Formik>
-            </div>
-       
-            </div>
-    )
+                        )}
+                    </Formik>
+                </div>
+            </div>   
+        </div>
+    );
+                    
 
 }
 
