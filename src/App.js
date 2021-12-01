@@ -15,6 +15,7 @@ import IndPost from './components/IndPost/post';
 import Form from './components/postForm/form';
 
 import Profile from './components/Profile/Profile';
+import Pic from './components/pic/pic';
 
 function App () {
   return (
@@ -26,13 +27,15 @@ function App () {
             <Home />
           </Route>
           <PrivateRoute path="/discuss" component={Discuss} />
-          {/* <Route exact path="/discuss">
-            <Discuss />
+          <Route exact path="/discuss">
+             <Discuss />
+          </Route>
+          <Route exact path="/pics">
+             <Pic />
           </Route>
           <Route exact path="/donate">
             <Form />
           </Route>
-          </Route> */}
           <Route exact path="/contact">
             <Contact />
           </Route>
@@ -47,6 +50,7 @@ function App () {
           </Route>
           <Route exact path="/blog">
             <Blog />
+            </Route>
           <Route exact path="/profile">
             <Profile/>
           </Route>
