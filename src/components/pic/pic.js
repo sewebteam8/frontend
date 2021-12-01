@@ -12,13 +12,12 @@ class Pic extends Component {
     }
 
     handleChange = (e) => {
-        console.log("Dsa")
         const field = e.currentTarget.name;
         if(field == 'file'){
             this.setState({pic:e.target.files[0]});
         }
         if(field == 'tags'){
-            console.log(e.currentTarget.value)
+            this.setState({tags:e.target.value});
         }
     }
 
@@ -36,7 +35,7 @@ class Pic extends Component {
         fd.append("tags",this.state.tags);
         fd.append("email",this.state.email);
         
-        axios.post("http://localhost:7000/services/upload", fd)
+        axios.post("https://se-web-app.herokuapp.com/services/upload", fd)
         .then((res) => {
             console.log("uploaded")
         })
@@ -45,8 +44,6 @@ class Pic extends Component {
         })
     }
 
-    handleChange = (e) => {
-    }
 
 
     render() { 

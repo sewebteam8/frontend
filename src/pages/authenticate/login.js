@@ -17,7 +17,7 @@ class Login extends Component {
     componentDidMount() {
         if (localStorage.getItem('cc-logged') === 'true') {
             console.log("logged")
-            window.open('/');
+            window.location.href = '/'
         }
         else console.log("failed")
     }

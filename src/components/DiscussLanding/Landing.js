@@ -1,9 +1,9 @@
 import './landing.css'
 const Landing = ({ onNext }) => {
   return (
-    <div className="landing-container p-5">
-        <div className="inner-landing-continer row">
-              <div className="col-7 p-5 desc">
+    <div className="discuss-landing-container p-5">
+        <div className="discuss-landing-continer-inner row">
+              < div className = "col-7 p-5 discuss-landing-desc" >
                   <h1>
                        Find your buddy and Talk with them
                   </h1>
@@ -17,8 +17,8 @@ const Landing = ({ onNext }) => {
               </div>
               
               <div className="col-5 p-5 message-box">
-                  <div className="message-card">
-
+                  <div className="message-img-card">
+                    <img src='./images/chatss.png' />
                   </div>
               </div>
         </div>
