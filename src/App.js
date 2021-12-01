@@ -28,7 +28,7 @@ function App () {
           <Route exact path="/">
             <Home />
           </Route>
-          <PrivateRoute path="/discuss" component={Discuss} />
+          <Route path="/discuss" component={Discuss} />
           <Route exact path="/discuss">
              <Discuss />
           </Route>
