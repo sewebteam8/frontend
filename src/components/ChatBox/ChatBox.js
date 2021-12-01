@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ChatBox = ({ person, account }) => {
+const ChatBox = ({ person, account,socket }) => {
     console.log(person)
     let chatBottom = useRef(null);
     const classes = useStyles();
@@ -91,6 +91,19 @@ const ChatBox = ({ person, account }) => {
         getConversationDetails();
     }, [person._id]);
 
+
+   useEffect(() => {
+
+       socket.on('getMessage', data => {
+           console.log(data);
+           setIncomingMessage({
+               sender: data.senderId,
+               text: data.text,
+               createdAt: Date.now()
+           })
+       })
+   }, []);
+    
    useEffect(() => {
         const getMessageDetails = async () => {
             let data = await getMessages(conversation._id);
@@ -98,13 +111,14 @@ const ChatBox = ({ person, account }) => {
         }
         getMessageDetails();
    }, [conversation?._id, person._id]);
+    
     useEffect(() => {
         incomingMessage && conversation?.members?.includes(incomingMessage.sender) && 
             setMessages((prev) => [...prev, incomingMessage]);
         
     }, [incomingMessage, conversation]);
-
-    const receiverId = conversation?.members?.find(member => member !== account._id);
+   
+const receiverId = conversation?.members?.find(member => member !== account._id);
 
 const scrollToBottom = () => {
     chatBottom.current.scrollIntoView({ behavior: "smooth" });

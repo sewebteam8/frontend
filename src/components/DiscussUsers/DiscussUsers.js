@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import List from "@material-ui/core/List";
 
 import { makeStyles } from "@material-ui/core/styles";
-import socketIOClient from "socket.io-client";
 import axios from 'axios'
 // import { useGetUsers } from "../Services/userService";
 // import commonUtilites from "../Utilities/common";
@@ -29,13 +28,22 @@ const Users = (props) => {
   const classes = useStyles();
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState(null);
-
+  
+   
+    // console.log(props.socket)
    useEffect(() => { 
        axios.get('https://se-web-app.herokuapp.com/services/users').then((res) => setUsers(res.data));
    }, [newUser]);
-
+    
+//    console.log(socket)
+   useEffect(() => {
+       props.socket.emit('addUser', props.account._id);
+       props.socket.on("getUsers", users => {
+        //    setActiveUsers(users);
+       })
+   }, [props.account])
  
-//   console.log(props.account);
+  console.log(props.account);
   return (
     <List className={classes.list}>
       {users && (

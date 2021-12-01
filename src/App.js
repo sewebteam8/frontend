@@ -5,11 +5,13 @@ import FindBuddy from './pages/FindYourBuddy/FindBuddy';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './App.css';
-import PrivateRoute from './utilities/privateRouter'
 import Footer from './components/Footer/footer';
 import Contact from './pages/Contact/contact';
 import Login from './pages/authenticate/login';
 import Signup from './pages/authenticate/signup';
+import ExamRequestForm from './components/ExamRequestForm/ExamRequestForm';
+import RoomPartnerFind from './components/RoomPartnerFind/RoomPartnerFind';
+import InternRequestForm from './components/InternRequestForm/InternrequestForm';
 import Blog from './pages/blog/blog';
 import IndPost from './components/IndPost/post';
 import Form from './components/postForm/form';
@@ -57,6 +59,16 @@ function App () {
            <Route exact path="/findbuddy">
             <FindBuddy />
           </Route>
+          <Route exact path='/examrequestform'>
+           <ExamRequestForm/>           
+            </Route>
+            <Route exact path='/findroompartner'>
+                <RoomPartnerFind/>    
+            </Route>
+            <Route exact path='/findintern'>
+                <InternRequestForm/>
+            </Route>
+                  
           <Route exact path="/singlepost/:id">
             <IndPost />
           </Route>

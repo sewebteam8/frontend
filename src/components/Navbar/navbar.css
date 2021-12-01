@@ -16,9 +16,10 @@
 .profile_{
     position: absolute;
     right: 0px;
-    width: 30%;
-    max-width: 250px;
-    height: 300px;
+    width: 20%;
+    margin-top: 300px;
+    max-width: 200px;
+    height: 250px;
     z-index: 1;
     box-shadow: 0px 0px 5px 2px black;
     background-color: #171717;
