@@ -15,27 +15,28 @@ const Footer = () =>
             <div className="col-md-3 mb-md-0 mb-3">
                 <h5 className="text-uppercase">Links</h5>
                 <ul className="list-unstyled">
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
+                    <li className="footer-link"> <a href="/">collab</a></li>
+                    <li className="footer-link"><a href="/addform">Add Post</a></li>
+                    <li className="footer-link"><a href="/contact">Contact Us</a></li>
+                    <li className="footer-link"><a href="discuss">Chat</a></li>
                 </ul>
             </div>
 
             <div className="col-md-3 mb-md-0 mb-3">
                 <h5 className="text-uppercase">Links</h5>
                 <ul className="list-unstyled">
-                    <li><a href="#!">Link 1</a></li>
-                    <li><a href="#!">Link 2</a></li>
-                    <li><a href="#!">Link 3</a></li>
-                    <li><a href="#!">Link 4</a></li>
+                    <li className="footer-link"> <i className = "icon ion-social-facebook"></i></li>
+                    <li className="footer-link"> <i className = "icon ion-social-twitter" > </i></li>
+                    <li className="footer-link"> <i className = "icon ion-social-snapchat"> </i></li>
+                    <li className="footer-link"> <i className = "icon ion-social-instagram"> </i></li>
+                     
                 </ul>
             </div>
         </div>
     </div>
 
     <div className="footer-copyright text-center py-3">© 2021 Copyright:
-        <a href="https://mdbootstrap.com/"> CollageCollab</a>
+        <a className="footer-link" href="https://mdbootstrap.com/"> CollageCollab</a>
     </div>
 
 </footer>

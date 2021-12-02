@@ -6,6 +6,7 @@ import Users from '../DiscussUsers/DiscussUsers'
 import ChatBox from '../ChatBox/ChatBox';
 function DiscussMessage() {
     const [user, setUser] = useState(null);
+    const [activeUsers, setActiveUsers] = useState([]);
     const account = JSON.parse(localStorage.getItem('currentUser')).user;
     // if (account === undefined) {
     //     <Redirect to="/authorise" />
@@ -16,6 +17,17 @@ function DiscussMessage() {
     //     socket.current = io('ws://localhost:9000');
     // }, []);
     const socket = io('ws://localhost:9000');
+    useEffect(() => {
+        socket.on('connect', () => {
+            socket.emit('addUser', account._id);
+            socket.on('geteUsers', (data) => {
+                setActiveUsers(data);
+                console.log(data);
+            });
+        });
+           
+    }, []);
+    // console.log(activeUsers);
     console.log(socket);
     return (
         <div className="meesage-page-main-box">
