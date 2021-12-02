@@ -2,7 +2,7 @@ import axios, { useState } from 'axios';
 import React, { Component } from 'react';
 import './pic.css';
 import bck from '../../Assets/bck_post.png'
-
+import {ToastContainer, toast} from 'react-toastify';
 class Pic extends Component {
 
     state = {
@@ -13,21 +13,18 @@ class Pic extends Component {
 
     handleChange = (e) => {
         const field = e.currentTarget.name;
-        if(field == 'file'){
-            this.setState({pic:e.target.files[0]});
-        }
+            
+            
         if(field == 'tags'){
             this.setState({tags:e.target.value});
         }
     }
 
-    componentDidMount() {
-        // const data = localStorage.getItem("currentUser");
-        // const useremail = data.user.email;
-        // this.setState({email : useremail});
-        // console.log(useremail);
+    handleChange2 = (e) => {
+            this.setState({pic:e.target.files[0]});
     }
 
+   
     handleSubmit = (e) => {
         e.preventDefault();
         var fd = new FormData();
@@ -38,10 +35,11 @@ class Pic extends Component {
         axios.post("https://se-web-app.herokuapp.com/services/upload", fd)
         .then((res) => {
             console.log("uploaded")
-            this.setState({pic:null,tags:""});
+            toast.success("Uploaded Successfully!");
         })
         .catch((err) => {
             console.log(err);
+            toast.error("Error in uploading!");
         })
     }
 
@@ -49,14 +47,15 @@ class Pic extends Component {
 
     render() { 
         return <React.Fragment>
-        <div className="container-fluid pics-wrapper">
+            <div className="container-fluid pics-wrapper">
+                <ToastContainer></ToastContainer>
             <div className="row">
                 <div className="col-md-6">
                     <img src={bck} className="bck-p" />
                 </div>
                 <div className="col-md-6">
                     <p className="head-p">Add your Post!</p>
-                    <input type="file" className="left" name="file"/>
+                    <input type="file" className="left" name="file" onChange={this.handleChange2}/>
                     <div class="form-group">
                         <label for="tags" className="feild_label">Tags</label>
                         <input type="text" value={this.state.tags} onChange={this.handleChange} class="form-control" id="tags" placeholder="Enter tags" name="tags"/>
