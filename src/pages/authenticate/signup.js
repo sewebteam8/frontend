@@ -12,7 +12,9 @@ class Signup extends Component {
             email : "",
             password : "",
             passwordCheck : "",
-            name : "",
+            name: "",
+            collageName: "",
+            state: ""
         }
     }
 
@@ -32,7 +34,9 @@ class Signup extends Component {
             const data = {
                 email : this.state.account.email,
                 password : this.state.account.password,
-                name : this.state.account.name,
+                name: this.state.account.name,
+                collageName: this.state.account.collageName,
+                state: this.state.account.state
             }
 
             axios.post('https://se-web-app.herokuapp.com/services/signup', data)
@@ -43,6 +47,8 @@ class Signup extends Component {
                 account.name = ""
                 account.password = ""
                 account.passwordCheck = ""
+                account.collageName = ""
+                account.state = ""
                 this.setState({ account })
                 localStorage.setItem('currentUser', JSON.stringify(res.data));
                 toast(`Signup successfull`)
@@ -53,6 +59,8 @@ class Signup extends Component {
                 account.name = ""
                 account.password = ""
                 account.passwordCheck = ""
+                 account.collageName = ""
+                 account.state = ""
                 this.setState({account})
                 toast("SignUp failed")
             });
@@ -64,15 +72,20 @@ class Signup extends Component {
             <>
             <ToastContainer></ToastContainer>
             <div className="signup-whole">
-                <form className="signup-form">
+                <form className="signup-form login__">
                     <div className="name-signup">Name</div>
                     <input name="name" value={this.state.account.name} onChange={this.handleChange} className="input-name-signup"></input>
                     <div className="email-signup">Email</div>
-                    <input name="email" type="mail" value={this.state.account.email} onChange={this.handleChange} className="input-email-signup"></input>
+                        <input name="email" type="mail" value={this.state.account.email} onChange={this.handleChange} className="input-email-signup"></input>
+                        <div className="collge-name-signup">CollageName</div>
+                        <input name="collageName" value={this.state.account.collageName} onChange={this.handleChange} className="input-collage-name-signup"></input>
+                        <div className="state-signup">State</div>
+                        <input name="state" value={this.state.account.state} onChange={this.handleChange} className="input-state-signup"></input>
                     <div className="password-signup">Password</div>
                     <input name="password" type="password" value={this.state.account.password} onChange={this.handleChange} className="input-password-signup"></input>
                     <div className="confirm-password-signup">Confirm Password</div>
                     <input name="passwordCheck" type="password" value={this.state.account.passwordCheck} onChange={this.handleChange} className="input-confirm-password"></input>
+                 
                     <div type="submit" onClick={this.handleSubmit} className="signup-btn">Signup</div>
                     <Link to="/authorise"  style={{textDecoration:'none'}}>
                         <div className="already-have">Already Have An Account</div> 

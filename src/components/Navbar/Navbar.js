@@ -30,9 +30,9 @@ const NavbarComponent = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                     <Nav.Link href="/">Collab</Nav.Link>
-                    <Nav.Link href="/findbuddy">Your buddy</Nav.Link>
-                    <Nav.Link href="/blog">Blog</Nav.Link>
-                    <Nav.Link href="/pic">Pic</Nav.Link>
+                    {localStorage.getItem('cc-logged') === 'true' && <Nav.Link href = "/findbuddy" > Your buddy </Nav.Link>}
+                    {localStorage.getItem('cc-logged') === 'true' && <Nav.Link href="/blog">Blog</Nav.Link>}
+                    {localStorage.getItem('cc-logged') === 'true' &&<Nav.Link href="/pic">Pic</Nav.Link>}
                     <Nav.Link href="/"><div onClick={handleClicks}>  Donate </div></Nav.Link>
                     <Nav.Link href="/discuss">Discuss</Nav.Link>
                     <Nav.Link href="/contact">Contact</Nav.Link>
@@ -47,7 +47,7 @@ const NavbarComponent = () => {
                 </div>
                 {
                     drop && <div className="profile_ ">
-                        <div className="profile_links"> <NavLink to = "/authorise" >Auth links</NavLink></div>
+                        <div className="profile_links"> <NavLink to = "/authorise" >Login</NavLink></div>
                         <div className="profile_links"> <NavLink to = "/editprofile" >Edit profile </NavLink></div>
                         <div className="profile_links"> <NavLink to="/profile" >Profile </NavLink></div>
                         <div className="profile_links"> <NavLink to = "/delete">Delete my account </NavLink></div>

@@ -38,6 +38,7 @@ class Pic extends Component {
         axios.post("https://se-web-app.herokuapp.com/services/upload", fd)
         .then((res) => {
             console.log("uploaded")
+            this.setState({pic:null,tags:""});
         })
         .catch((err) => {
             console.log(err);

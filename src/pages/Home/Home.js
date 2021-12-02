@@ -10,6 +10,9 @@ const Home = () => {
     const [short, setShort] = useState([]);
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState([]);
+    const [collageCount, setCollageCount] = useState([]);
+    const [stateCount, setStateCount] = useState([]);
+    const [studentCount, setStudentCount] = useState();
     const [result, setResult] = useState([
         {
             title : "first chapter in my college",
@@ -34,17 +37,37 @@ const Home = () => {
     ]);
 
     useEffect(() => {
-        axios.get("http://localhost:7000/services/uploadpic")
-        .then((res) => {
-            console.log(res.data);
-            setShort(res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-    },[])
-    
-
+        axios.get("https://se-web-app.herokuapp.com/services/uploadpic")
+            .then((res) => {
+                console.log(res.data);
+                setShort(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, []);
+    useEffect(() => {
+        axios.get("https://se-web-app.herokuapp.com/services/users")
+            .then((res) => {
+                console.log(res.data);
+                res.data.map((item) => {
+                    if (stateCount.indexOf(item.state) === -1) {
+                        stateCount.push(item.state);
+                    }
+                    if(collageCount.indexOf(item.college) === -1){
+                        collageCount.push(item.college);
+                    }
+                })
+                setStateCount(stateCount);
+                setCollageCount(collageCount);
+                setStudentCount(res.data.length);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, []);
+    console.log(collageCount);
+    console.log(stateCount);
     const handleSearch = (e) => {
         for(let i = 0; i < result.length; i++){
             if(result[i].title.includes(search)){
@@ -65,7 +88,7 @@ const Home = () => {
         }
         setSearch(e.currentTarget.value)
     }   
-
+   
     return ( 
         <div className="container-fluid home"> 
             <div className="row">
@@ -88,7 +111,7 @@ const Home = () => {
                     short.map(item => {
                        return( 
                             <div className="col-5 col-md-3 shorts">
-                                <img src={`http://localhost:7000/${item.name}`} className="img-short" />
+                                <img src={`https://se-web-app.herokuapp.com/${item.name}`} className="img-short" />
                             </div>
                        );
                     })
@@ -101,9 +124,9 @@ const Home = () => {
                     <p className="data-desc">
                     <h4>Our data makes our webite more real and legitimate!</h4>
                         <div className="info-desc">
-                            <p>The web site currently has students from 0 colleges</p>
-                            <p>which account to total 0 students</p>
-                            <p>from 0 states of the union of India</p>
+                            <p>The web site currently has students from {collageCount.length} colleges</p>
+                            <p>which account to total {studentCount} students</p>
+                            <p>from {stateCount.length} states of the union of India</p>
                         </div>
                     <em>* Be the next one to join us and make new connections,find new buddy and add alot more to your projects, intern ...</em>
                     </p>

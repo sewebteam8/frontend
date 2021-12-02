@@ -65,7 +65,7 @@ class Login extends Component {
             <>
             <ToastContainer></ToastContainer>
             <div className="login-whole">
-                <form className="login-form">
+                <form className="login-form login__">
                     <div className="login-title">Collab </div>
                     <div className="email-login" >Email</div>
                     <input name="email" type="mail" className="input-email-login" value={this.state.account.email} onChange={this.handleChange}></input>
